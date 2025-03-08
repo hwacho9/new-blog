@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Highlight.js 스타일 */
+@import "highlight.js/styles/github.css";
+
+/* 마크다운 스타일 - 기본 요소 */
+.prose {
+  @apply text-gray-800 leading-relaxed;
+}
+
+.prose h1 {
+  @apply text-3xl font-bold mb-6 mt-8 text-gray-900;
+}
+
+.prose h2 {
+  @apply text-2xl font-bold mb-4 mt-8 text-gray-900 border-b pb-2 border-gray-200;
+}
+
+.prose h3 {
+  @apply text-xl font-bold mb-3 mt-6 text-gray-900;
+}
+
+.prose h4 {
+  @apply text-lg font-bold mb-2 mt-4 text-gray-900;
+}
+
+.prose p {
+  @apply my-4 text-gray-700;
+}
+
+/* 마크다운 코드 블록 스타일 */
+.prose code {
+  @apply bg-gray-100 px-1.5 py-0.5 rounded text-gray-800 font-mono text-sm;
+}
+
+.prose pre {
+  @apply bg-gray-800 rounded-lg overflow-x-auto p-4 my-6 relative;
+}
+
+.prose pre code {
+  @apply bg-transparent p-0 text-gray-200 text-sm;
+  white-space: pre;
+}
+
+/* 코드 블록 언어 표시 */
+.code-block-container {
+  @apply relative;
+}
+
+.code-language {
+  @apply absolute right-2 top-0 px-2 py-1 text-xs bg-gray-700 text-gray-300 rounded-b uppercase font-mono;
+  transform: translateY(-100%);
+}
+
+/* 마크다운 표 스타일 */
+.prose table {
+  @apply w-full border-collapse my-6;
+}
+
+.prose table th {
+  @apply bg-gray-100 p-2 text-left border border-gray-300;
+}
+
+.prose table td {
+  @apply p-2 border border-gray-300;
+}
+
+/* 마크다운 인용구 */
+.prose blockquote {
+  @apply border-l-4 border-gray-300 pl-4 italic my-4 text-gray-700 bg-gray-50 py-1;
+}
+
+/* 목록 스타일 */
+.prose ul {
+  @apply list-disc pl-5 my-4 space-y-1;
+}
+
+.prose ol {
+  @apply list-decimal pl-5 my-4 space-y-1;
+}
+
+/* 링크 스타일 */
+.prose a {
+  @apply text-blue-600 hover:underline;
+}
+
+/* 수평선 */
+.prose hr {
+  @apply my-8 border-t border-gray-300;
+}
+
+/* 강조 */
+.prose strong {
+  @apply font-bold;
+}
+
+.prose em {
+  @apply italic;
+}
